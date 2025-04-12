@@ -1,112 +1,107 @@
+from pathlib import Path
+
+# HTML content from the canvas
+html_content = """
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danielle Bopda | Data Scientist & Business Analyst</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: black;
-        }
-        header {
-            background-color: #001F3F;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        section {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            font-weight: bold;
-        }
-        h2, h3 {
-            color: black;
-            font-weight: bold;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .contact {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .contact a {
-            margin: 0 10px;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danielle Bopda | Data Scientist & Business Analyst</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .project {
+      background-color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #007BFF;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Danielle Bopda</h1>
-        <p><strong>Data Scientist | Business Analyst | Cybersecurity Enthusiast</strong></p>
-    </header>
-    
-    <section>
-        <h2>About Me</h2>
-        
-        <h3>My Intro</h3>
-        <p>Hello, I am Danielle Bopda, a data scientist and business analyst skilled in AI, machine learning, and data-driven decision-making. I develop predictive models and AI-driven solutions for business intelligence, cybersecurity, and risk management. My expertise in cloud computing, data visualization, and automation helps organizations optimize operations and drive innovation.</p>
-        
-        <h3>My Motivation</h3>
-        <p>I am driven by the power of data to shape industries and drive innovation. My passion lies in leveraging machine learning, artificial intelligence, and data engineering to build intelligent solutions that solve real-world challenges in business, healthcare, and security. My commitment to continuous learning and strategic problem-solving makes me adaptable to evolving industry trends.</p>
-        
-        <h3>Technical Skills</h3>
-        <ul>
-            <li>Programming & Data Science: Python, R, SQL, Jupyter Notebooks</li>
-            <li>Machine Learning & AI: Predictive Modeling, Deep Learning, NLP, Computer Vision</li>
-            <li>Big Data & Data Engineering: ETL Pipelines, Pandas, TensorFlow, PyTorch</li>
-            <li>Cloud Computing & Deployment: AWS (S3, EC2, Lambda, RDS, Glue, SageMaker, Rekognition)</li>
-            <li>Business Intelligence & Visualization: Tableau, Power BI, Matplotlib, Seaborn</li>
-            <li>Cybersecurity & Risk Management: Threat Detection, Anomaly Detection, Compliance (HIPAA, GDPR)</li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>My Projects</h2>
-        
-        <h3>Customer Churn Prediction for Telecom Sector</h3>
-        <p><strong>Problem Statement:</strong> Predict customer churn in the telecom sector to enhance retention strategies.</p>
-        <p><strong>Solution:</strong> Built a K-Nearest Neighbors (KNN) model on a dataset of 5,000+ records with 15 features. Applied feature engineering, hyperparameter tuning, and 10-fold cross-validation, achieving 87% accuracy.</p>
-        <p><strong>Tools:</strong> Python, Scikit-Learn, Pandas, NumPy, Matplotlib, Seaborn</p>
-        <img src="images/churn_analysis.png" alt="Customer Churn Analysis">
-        <p><a href="https://github.com/DanielleBopda/churn-prediction">View Project on GitHub</a></p>
-        
-        <h3>Predicting Diabetes Onset Using Support Vector Machines</h3>
-        <p><strong>Problem Statement:</strong> Develop a model to predict diabetes onset using patient health metrics.</p>
-        <p><strong>Solution:</strong> Built an SVM-based classification model using the Pima Indians Diabetes dataset. Optimized missing value imputation, feature selection, and kernel tuning, achieving a test accuracy of 75%.</p>
-        <p><strong>Tools:</strong> Python, Scikit-Learn, Pandas, NumPy, Matplotlib, Seaborn</p>
-        <img src="images/diabetes_prediction.png" alt="Diabetes Prediction Visualization">
-        <p><a href="https://github.com/DanielleBopda/diabetes-prediction">View Project on GitHub</a></p>
-        
-        <h3>Intrusion Detection System Using Machine Learning</h3>
-        <p><strong>Problem Statement:</strong> Identify and classify cyber threats in network traffic.</p>
-        <p><strong>Solution:</strong> Developed an intrusion detection system using decision trees and neural networks. Achieved 97% accuracy and improved recall for rare attacks by 35% using feature engineering and class balancing.</p>
-        <p><strong>Tools:</strong> Python, Pandas, NumPy, Scikit-Learn, TensorFlow, Matplotlib, Seaborn</p>
-        <img src="images/intrusion_detection.png" alt="Intrusion Detection Visualization">
-        <p><a href="https://github.com/DanielleBopda/intrusion-detection">View Project on GitHub</a></p>
-    </section>
-    
-    <section class="contact">
-        <h2>Let's Work Together</h2>
-        <p>Email: <a href="mailto:daniellebopda@gmail.com">daniellebopda@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/daniellecbopda">www.linkedin.com/in/daniellecbopda</a></p>
-        <p>GitHub: <a href="https://github.com/DanielleBopda">github.com/DanielleBopda</a></p>
-    </section>
+  <header>
+    <h1>Danielle Bopda</h1>
+    <p>Data Scientist | Business Analyst | Purpose-Driven Innovator</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Danielle — a data scientist and business analyst turning insights into impact. With a B.S. in Data Science and a Business Analytics certificate, I blend analytical skills, industry experience, and real-world problem-solving to create meaningful, high-ROI solutions. Whether in healthcare, cybersecurity, or business operations, I build with strategy, precision, and purpose.</p>
+  </section>
+
+  <section id="story">
+    <h2>See My Full Story</h2>
+    <p>I’m a former healthcare professional, mom of two, and purpose-driven learner with a passion for helping people and systems thrive. My journey into data began with a desire to bridge gaps in healthcare and business using ethical AI and smart analytics. I’ve completed hands-on projects, real coursework, and built tools that solve real problems. My faith and motivation fuel my mission: to create data-powered change that lasts.</p>
+  </section>
+
+  <section id="motivation">
+    <h2>My Motivation</h2>
+    <p>I believe in making the best out of the life we live. That means building a career and legacy driven by purpose. I want to help organizations make smarter decisions, reduce risks, and serve people better using data. Every model, dashboard, and strategy I design is a step toward a better, data-informed world — especially in communities that need it most.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, SQL, R</li>
+      <li><strong>Tools & Libraries:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch</li>
+      <li><strong>Visualization:</strong> Power BI, Tableau, Matplotlib, Seaborn</li>
+      <li><strong>Cloud & Data:</strong> AWS (S3, EC2, RDS, Lambda), Google Colab, Excel</li>
+      <li><strong>Other:</strong> Data Cleaning, Predictive Modeling, Dashboard Design, Business Strategy, Machine Learning, Ethical AI</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="project">
+      <h3>1. Intrusion Detection Using ML (CICIDS2017)</h3>
+      <p>Developed an advanced IDS to identify cyber threats like DDoS, Port Scans, and Web Attacks using Decision Trees and Neural Networks. Achieved 97% accuracy with real-time chunked processing on 2.8M records.</p>
+    </div>
+
+    <div class="project">
+      <h3>2. Customer Churn Prediction – Telecom Sector</h3>
+      <p>Built a predictive churn model using KNN on telecom data. Achieved 87% accuracy and reduced misclassification errors by 15% through hyperparameter tuning and cross-validation.</p>
+    </div>
+
+    <div class="project">
+      <h3>3. Diabetes Onset Prediction Using SVM</h3>
+      <p>Designed an SVM-based classifier using the Pima Indians dataset. Improved recall for high-risk patients and optimized accuracy with various kernel techniques.</p>
+    </div>
+
+    <div class="project">
+      <h3>4. Pharmaceutical Employee Attrition – Acme Pharma</h3>
+      <p><strong>Problem Statement:</strong> Acme Pharmaceutical Company is experiencing high employee attrition, impacting research, production, and sales performance. I developed a Power BI dashboard and predictive model to identify key attrition drivers and offer strategic solutions to improve employee retention and organizational performance.</p>
+    </div>
+  </section>
 </body>
+
 </html>
+"""
+
+# Save the HTML content to a file
+file_path = Path("/mnt/data/index.html")
+file_path.write_text(html_content)
+
+file_path.name
